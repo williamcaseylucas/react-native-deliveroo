@@ -2,6 +2,7 @@
 
 # dependencies
 node_modules/
+deliveroo-clone/node_modules/
 
 # Expo
 .expo/
