@@ -11,6 +11,7 @@ NativeWindStyleSheet.setOutput({
 });
 // Screens
 import HomeScreen from "./screens/HomeScreen";
+import RestaurantScreen from "./screens/RestaurantScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -20,6 +21,7 @@ export default function App() {
       <Stack.Navigator>
         {/* Screens */}
         <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Restaurant" component={RestaurantScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

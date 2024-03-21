@@ -19,9 +19,9 @@ export default defineType({
       validation: (Rule) => Rule.max(200),
     }),
     defineField({
-      name: 'resteraunts',
+      name: 'restaurants',
       type: 'array',
-      title: 'Resteraunts',
+      title: 'Restaurants',
       of: [{type: 'reference', to: [{type: 'restaurant'}]}],
     }),
   ],

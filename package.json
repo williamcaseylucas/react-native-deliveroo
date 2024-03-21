@@ -12,6 +12,8 @@
     "@expo/ngrok": "^4.1.0",
     "@react-navigation/native": "^6.1.17",
     "@react-navigation/native-stack": "^6.9.26",
+    "@sanity/client": "^6.15.7",
+    "@sanity/image-url": "^1.0.2",
     "expo": "~50.0.14",
     "expo-font": "~11.10.3",
     "expo-status-bar": "~1.11.1",

@@ -1,7 +1,9 @@
-import { View, Text, TouchableOpacity, Image } from "react-native";
+import { View, Text, TouchableOpacity, Image, Pressable } from "react-native";
 import { StarIcon } from "react-native-heroicons/solid";
 import { MapPinIcon } from "react-native-heroicons/outline";
 import React from "react";
+import { urlFor } from "../sanity";
+import { useNavigation } from "@react-navigation/native";
 
 const RestaurantCard = ({
   id,
@@ -15,12 +17,33 @@ const RestaurantCard = ({
   long,
   lat,
 }) => {
+  const nav = useNavigation();
   return (
-    <TouchableOpacity className="bg-white mr-3 shadow">
+    <Pressable
+      className="bg-white mr-3 shadow"
+      onPress={() => {
+        // Use key from home screen
+        // Pass information into new component
+        nav.navigate("Restaurant", {
+          id,
+          imgUrl,
+          title,
+          rating,
+          genre,
+          address,
+          short_description,
+          dishes,
+          long,
+          lat,
+        });
+      }}
+    >
+      {/* Now imgUrl is from sanity, so we use wrapper function we defined before to query this */}
       <Image
         className="h-36 w-64 rounded-sm"
         source={{
-          uri: imgUrl,
+          // uri: imgUrl,
+          uri: urlFor(imgUrl).url(),
         }}
       />
       <View className="px-3 pb-4">
@@ -37,7 +60,7 @@ const RestaurantCard = ({
           <Text className="text-xs text-gray-500">Nearby • {address}</Text>
         </View>
       </View>
-    </TouchableOpacity>
+    </Pressable>
   );
 };
 
